@@ -1,0 +1,285 @@
+TypeScript Roadmap for Playwright Automation Engineers
+🟢 Module 1 – TypeScript Basics (Highest Priority ⭐⭐⭐⭐⭐)
+
+These are used in almost every file.
+
+1. What is TypeScript?
+Why TypeScript?
+How TypeScript differs from JavaScript
+Compilation to JavaScript
+Benefits in automation
+2. Basic Types ⭐⭐⭐⭐⭐
+let username: string
+let age: number
+let isAdmin: boolean
+
+Learn:
+
+string
+number
+boolean
+any
+unknown
+void
+never
+3. Type Inference ⭐⭐⭐⭐⭐
+let name = "Narayanan"
+
+Why no type?
+
+How TS infers it.
+
+4. Arrays ⭐⭐⭐⭐⭐
+string[]
+number[]
+Array<string>
+5. Objects ⭐⭐⭐⭐⭐
+let user = {
+    name: "John",
+    age: 20
+}
+6. Functions ⭐⭐⭐⭐⭐
+function login(username: string): void
+
+Learn
+
+parameters
+return type
+optional parameter
+default parameter
+rest parameter
+🟢 Module 2 – Object-Oriented Programming ⭐⭐⭐⭐⭐
+
+Almost every Playwright framework uses OOP.
+
+7. Classes ⭐⭐⭐⭐⭐
+class LoginPage {
+
+}
+8. Constructor ⭐⭐⭐⭐⭐
+constructor(page: Page) {
+
+}
+9. Access Modifiers ⭐⭐⭐⭐⭐
+public
+
+private
+
+protected
+
+readonly
+
+Used everywhere.
+
+10. Inheritance ⭐⭐⭐⭐
+class BasePage
+
+class LoginPage extends BasePage
+
+Very common.
+
+🟢 Module 3 – Interfaces (MOST IMPORTANT)
+
+If I had to choose one topic...
+
+It would be Interfaces.
+
+11. Interfaces ⭐⭐⭐⭐⭐
+interface User {
+
+}
+
+You'll see interfaces everywhere.
+
+12. Optional Properties
+name?: string
+13. Readonly Properties
+readonly id
+14. Interface Extension
+extends
+🟢 Module 4 – Type Aliases ⭐⭐⭐⭐⭐
+
+Very common.
+
+type LoginData = {
+
+}
+
+Understand:
+
+Difference between interface and type
+When to use each
+🟢 Module 5 – Union & Literal Types ⭐⭐⭐⭐
+string | number
+
+"admin" | "user"
+
+Used in API helpers and utility methods.
+
+🟢 Module 6 – Enums ⭐⭐⭐⭐
+enum BrowserType
+
+Not everywhere but common enough.
+
+🟢 Module 7 – Modules ⭐⭐⭐⭐⭐
+
+Absolutely essential.
+
+Understand
+
+import
+
+export
+
+export default
+
+Example
+
+import { LoginPage } from '../pages/LoginPage'
+🟢 Module 8 – Async Programming ⭐⭐⭐⭐⭐
+
+You already know async/await from JavaScript, but understand it well because Playwright relies on it.
+
+async
+
+await
+
+Promise<void>
+
+Promise<string>
+🟢 Module 9 – Generics ⭐⭐⭐⭐
+
+Looks scary.
+
+Actually not.
+
+You'll see
+
+Promise<T>
+
+Array<T>
+
+Map<K,V>
+
+Sometimes
+
+function<T>()
+
+Understand the basics.
+
+🟢 Module 10 – Utility Types ⭐⭐⭐
+
+Very useful.
+
+Learn
+
+Partial
+
+Required
+
+Pick
+
+Omit
+
+Record
+
+These appear in mature frameworks.
+
+🟢 Module 11 – Type Assertions ⭐⭐⭐⭐
+as
+
+<>
+
+Example
+
+const input = element as HTMLInputElement
+🟢 Module 12 – Null Handling ⭐⭐⭐⭐
+?
+
+??
+
+!.
+
+
+Especially
+
+Optional Chaining
+
+Nullish Coalescing
+
+Non-null Assertion
+Topics You Can Skip Initially
+
+These are advanced or uncommon in Playwright frameworks:
+
+❌ Namespaces
+
+❌ Decorators
+
+❌ Declaration Merging
+
+❌ Mixins
+
+❌ Conditional Types (advanced)
+
+❌ Mapped Types (advanced)
+
+❌ Template Literal Types
+
+❌ Variance
+
+❌ Declaration Files (.d.ts) in depth
+
+Topics Specifically Related to Playwright Frameworks
+
+Once you're comfortable with the essentials above, focus on how TypeScript is applied in automation:
+
+Folder structure
+playwright.config.ts
+Page Object Model (POM)
+Fixtures
+Custom fixtures
+Hooks (beforeEach, afterEach)
+Test data models
+Utility/helper classes
+API helpers
+Environment configuration
+tsconfig.json (basic understanding)
+Path aliases (e.g., @pages, @utils)
+Reporting and test organization
+Recommended Learning Order
+Step	Topic	Priority
+1	TypeScript Introduction	⭐⭐⭐⭐⭐
+2	Basic Types	⭐⭐⭐⭐⭐
+3	Variables & Type Inference	⭐⭐⭐⭐⭐
+4	Arrays & Objects	⭐⭐⭐⭐⭐
+5	Functions	⭐⭐⭐⭐⭐
+6	Classes	⭐⭐⭐⭐⭐
+7	Constructors	⭐⭐⭐⭐⭐
+8	Access Modifiers	⭐⭐⭐⭐⭐
+9	Interfaces	⭐⭐⭐⭐⭐
+10	Type Aliases	⭐⭐⭐⭐⭐
+11	Modules (import/export)	⭐⭐⭐⭐⭐
+12	Async/Await & Promises	⭐⭐⭐⭐⭐
+13	Inheritance	⭐⭐⭐⭐
+14	Union Types	⭐⭐⭐⭐
+15	Enums	⭐⭐⭐⭐
+16	Generics	⭐⭐⭐⭐
+17	Type Assertions	⭐⭐⭐
+18	Utility Types	⭐⭐⭐
+19	Optional Chaining & Null Handling	⭐⭐⭐
+My suggestion for your learning journey
+
+Since we've already been learning Java in a structured way, I recommend we do the same for TypeScript. We can treat this as a "TypeScript for Playwright Automation Engineers" course rather than a generic TypeScript course.
+
+For every topic, we'll cover:
+
+Concept – What it is and why it exists.
+Syntax – With simple examples.
+JavaScript vs. TypeScript – Key differences.
+Playwright Usage – How you'll encounter it in a real automation framework.
+Best Practices – Common patterns used in production code.
+Hands-on Exercises – To reinforce the concept.
+Interview Questions – Frequently asked TypeScript questions for automation roles.
+
+This way, you'll not only learn TypeScript but also become comfortable navigating and contributing to your organization's Playwright automation framework.
